@@ -19,3 +19,13 @@
 <ng-template #nameNotFound>
   Only visible for <em>{{ name }}</em>
 </ng-template>
+
+<h2>List rendering</h2>
+<p>Animal types: <span *ngFor="let type of animal_types" class="label">{{ type }}</span></p>
+<p>Showing <strong>{{ animals.length }}</strong> animals:</p>
+<ul>
+  <li *ngFor="let animal of animals" class="animal-container">
+    <h3>{{ animal.name }}</h3>
+    <span class="label">{{ animal.type }}</span>
+  </li>
+</ul>

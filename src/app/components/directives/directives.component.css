@@ -7,3 +7,26 @@
   font-size: 2rem;
   opacity: 0.6;
 }
+
+.animal-container {
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.animal-container:not(:last-of-type) {
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+}
+
+.label {
+  display: inline-flex;
+  padding: 4px 8px;
+  margin: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.6;
+  color: white;
+  background-color: var(--color-primary);
+  border-radius: 40px;
+}
