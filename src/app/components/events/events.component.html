@@ -1,3 +1,12 @@
 <h2>Handling events</h2>
+<h3>Event binding</h3>
 <button (click)="showContent()">{{ show_text }} content</button>
 <p *ngIf="show">Content visible</p>
+
+<hr>
+
+<h3>Event emitter</h3>
+<app-emitter></app-emitter>
+
+<p>App new title is: <strong>{{ app_title }}</strong></p>
+<button (click)="generateAppTitle()">Generate new title</button>
