@@ -27,5 +27,8 @@
   <li *ngFor="let animal of animals" class="animal-container">
     <h3>{{ animal.name }}</h3>
     <span class="label">{{ animal.type }}</span>
+    <button (click)="showAge(animal)">View age</button>
   </li>
 </ul>
+
+<p class="paragraph">{{ animal_details }}</p>

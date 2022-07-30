@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Animal } from 'src/app/animal';
 
 @Component({
   selector: 'app-directives',
@@ -17,14 +18,26 @@ export class DirectivesComponent implements OnInit {
   show_content: boolean = false;
 
   animal_types: Array<string> = ['Dog', 'Cat', 'Horse'];
-  animals: Array<any> = [
-    { name: 'Nina', type: this.animal_types[0] },
-    { name: 'Gatuno', type: this.animal_types[1] },
-    { name: 'Bob', type: this.animal_types[0] },
-    { name: 'Fred', type: this.animal_types[2] },
+  animals: Array<Animal> = [
+    { name: 'Nina', type: this.animal_types[0], age: 15 },
+    { name: 'Gatuno', type: this.animal_types[1], age: 3 },
+    { name: 'Bob', type: this.animal_types[0], age: 5 },
+    { name: 'Fred', type: this.animal_types[2], age: 6 },
   ];
+  new_animal: Animal = {
+    name: 'Felix',
+    type: this.animal_types[1],
+    age: 1,
+  };
+  animal_details: string = '';
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.animals.push(this.new_animal);
+  }
+
+  showAge(animal: Animal) {
+    this.animal_details = `Pet ${animal.name} is ${animal.age} years old.`;
+  }
 }
