@@ -16,6 +16,14 @@ export class DirectivesComponent implements OnInit {
   @Input() name: string = '';
   show_content: boolean = false;
 
+  animal_types: Array<string> = ['Dog', 'Cat', 'Horse'];
+  animals: Array<any> = [
+    { name: 'Nina', type: this.animal_types[0] },
+    { name: 'Gatuno', type: this.animal_types[1] },
+    { name: 'Bob', type: this.animal_types[0] },
+    { name: 'Fred', type: this.animal_types[2] },
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}
