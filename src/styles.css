@@ -17,3 +17,20 @@ body {
 a {
   color: var(--color-primary);
 }
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+dl {
+  margin-bottom: 20px;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  padding-left: 20px;
+}
