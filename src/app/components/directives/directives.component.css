@@ -1,0 +1,9 @@
+.paragraph {
+  font-family: serif;
+  font-size: 1.5rem;
+}
+
+.foreword {
+  font-size: 2rem;
+  opacity: 0.6;
+}
