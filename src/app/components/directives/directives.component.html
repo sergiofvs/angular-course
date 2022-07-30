@@ -4,5 +4,18 @@
   color
 }">Testing style directive</h2>
 
+<hr>
+
+<h2>Class directive</h2>
+
 <p [ngClass]="introduction">Paragraph with dynamic classes</p>
 <p [ngClass]="paragraph">Regular paragraph.</p>
+
+<hr>
+
+<h2>Conditionals</h2>
+<div *ngIf="show_content">Content's visible</div>
+<p *ngIf="name !== 'John Doe'; else nameNotFound">Visible for anyone but <em>John</em></p>
+<ng-template #nameNotFound>
+  Only visible for <em>{{ name }}</em>
+</ng-template>

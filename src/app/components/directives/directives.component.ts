@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-directives',
@@ -12,6 +12,9 @@ export class DirectivesComponent implements OnInit {
 
   paragraph: string = 'paragraph';
   introduction: Array<string> = [this.paragraph, 'foreword'];
+
+  @Input() name: string = '';
+  show_content: boolean = false;
 
   constructor() {}
 
