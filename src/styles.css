@@ -37,18 +37,27 @@ dd {
 }
 
 button {
+  --color: black;
+  --background-color: white;
+
   display: inline-flex;
   padding: 11px 20px 13px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   cursor: pointer;
+  color: var(--color);
+  background-color: var(--background-color);
   border-style: none;
   box-shadow: 0 1px 2px lightgray, 0 2px 4px lightgray;
 }
 
 button:active {
-  color: white;
-  background-color: black;
+  color: var(--background-color);
+  background-color: var(--color);
   box-shadow: 0 0 0;
+}
+
+button.-negative {
+  --color: var(--color-primary);
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Animal } from 'src/app/animal';
+import { ListService } from 'src/app/services/list.service';
 
 @Component({
   selector: 'app-directives',
@@ -31,7 +32,7 @@ export class DirectivesComponent implements OnInit {
   };
   animal_details: string = '';
 
-  constructor() {}
+  constructor(private listService: ListService) {}
 
   ngOnInit(): void {
     this.animals.push(this.new_animal);
@@ -39,5 +40,9 @@ export class DirectivesComponent implements OnInit {
 
   showAge(animal: Animal) {
     this.animal_details = `Pet ${animal.name} is ${animal.age} years old.`;
+  }
+
+  removeAnimal(animal: Animal) {
+    this.animals = this.listService.remove(this.animals, animal);
   }
 }
