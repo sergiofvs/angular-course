@@ -1,0 +1,14 @@
+<h2>Two-way data binding</h2>
+<form>
+  <div>
+    <label for="name">Name</label>
+    <input [(ngModel)]="name" type="text" id="name" name="name" placeholder="Type your name">
+  </div>
+  <div>
+    <label for="age">Age</label>
+    <input [(ngModel)]="age" type="number" id="age" name="age" placeholder="Type your age" min="0">
+  </div>
+  <input type="submit" value="Send">
+</form>
+<p *ngIf="name !== ''">Your name is: {{ name }}</p>
+<p *ngIf="age > 17">You're over 18</p>
