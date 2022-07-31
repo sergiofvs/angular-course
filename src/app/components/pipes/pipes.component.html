@@ -1,0 +1,21 @@
+<h3>String</h3>
+<p>{{ 'Some text in uppercase' | uppercase }}</p>
+<p>{{ 'Some text in titlecase' | titlecase }}</p>
+<p>{{ text | lowercase }}</p>
+
+<h3>Date</h3>
+<p>Default date: {{ today | date }}</p>
+<p>Full: {{ today | date : 'full' }}</p>
+<p>Medium date: {{ today | date : 'mediumDate' }}</p>
+<p>dd/MM/yyyy: {{ today | date : 'dd/MM/yyyy' }}</p>
+<p>{{ today | date : 'E, MMMM dd, yy - hh:mm' }}</p>
+
+<h3>Currency</h3>
+<p>{{ money | currency }}</p>
+<p>{{ money | currency : 'BRL' }}</p>
+<p>{{ money | currency : '' : 'code' }}</p>
+<p>{{ money | currency : 'BRL' : 'symbol-narrow' : '4.2-4' }}</p>
+
+<h3>Percent</h3>
+<p>{{ 0.5576 | percent }}</p>
+<p>{{ 0.1284 | percent : '3.2' }}</p>
