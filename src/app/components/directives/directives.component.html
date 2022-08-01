@@ -21,7 +21,6 @@
 </ng-template>
 
 <h2>List rendering</h2>
-<p>Animal types: <span *ngFor="let type of animal_types" class="label">{{ type }}</span></p>
 <p>Showing <strong>{{ animals.length }}</strong> animals:</p>
 <ul>
   <li *ngFor="let animal of animals" class="animal-container">
@@ -33,3 +32,5 @@
 </ul>
 
 <p class="paragraph">{{ animal_details }}</p>
+
+<button (click)="addAnimal()">Add animal</button>
