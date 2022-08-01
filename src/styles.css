@@ -61,3 +61,25 @@ button:active {
 button.-negative {
   --color: var(--color-primary);
 }
+
+.paragraph {
+  font-family: serif;
+  font-size: 1.5rem;
+}
+
+.foreword {
+  font-size: 2rem;
+  opacity: 0.6;
+}
+
+.label {
+  display: inline-flex;
+  padding: 4px 8px;
+  margin: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.6;
+  color: white;
+  background-color: var(--color-primary);
+  border-radius: 40px;
+}

@@ -13,6 +13,8 @@ import { EmitterComponent } from './components/emitter/emitter.component';
 import { ChangeNumberComponent } from './components/change-number/change-number.component';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { TwoWayBindingComponent } from './components/two-way-binding/two-way-binding.component';
+import { AnimalListComponent } from './components/animal-list/animal-list.component';
+import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { TwoWayBindingComponent } from './components/two-way-binding/two-way-bin
     ChangeNumberComponent,
     PipesComponent,
     TwoWayBindingComponent,
+    AnimalListComponent,
+    AnimalDetailComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],

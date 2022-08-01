@@ -16,6 +16,10 @@ export class ListService {
     return this.http.get<Animal[]>(this.base_url);
   }
 
+  getItem(id: number): Observable<Animal> {
+    return this.http.get<Animal>(`${this.base_url}/${id}`);
+  }
+
   post(animal: Animal): Observable<Animal> {
     return this.http.post<Animal>(this.base_url, animal);
   }
