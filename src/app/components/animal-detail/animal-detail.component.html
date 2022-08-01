@@ -1,0 +1,10 @@
+<div *ngIf="animal">
+  <h2><a routerLink="/animals">Animals</a> > {{ animal.name }}</h2>
+  <dl>
+    <dt>Type</dt>
+    <dd><span class="label">{{ animal.type }}</span></dd>
+    <dt>Age</dt>
+    <dd>{{ animal.age }}</dd>
+  </dl>
+
+</div>

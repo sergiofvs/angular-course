@@ -20,17 +20,4 @@
   Only visible for <em>{{ name }}</em>
 </ng-template>
 
-<h2>List rendering</h2>
-<p>Showing <strong>{{ animals.length }}</strong> animals:</p>
-<ul>
-  <li *ngFor="let animal of animals" class="animal-container">
-    <h3>{{ animal.name }}</h3>
-    <span class="label">{{ animal.type }}</span>
-    <button (click)="showAge(animal)">View age</button>
-    <button (click)="removeAnimal(animal)" class="-negative">Remove</button>
-  </li>
-</ul>
-
-<p class="paragraph">{{ animal_details }}</p>
-
-<button (click)="addAnimal()">Add animal</button>
+<app-animal-list></app-animal-list>
