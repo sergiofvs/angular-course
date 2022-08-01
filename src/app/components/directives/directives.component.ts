@@ -18,31 +18,43 @@ export class DirectivesComponent implements OnInit {
   @Input() name: string = '';
   show_content: boolean = false;
 
-  animal_types: Array<string> = ['Dog', 'Cat', 'Horse'];
-  animals: Array<Animal> = [
-    { name: 'Nina', type: this.animal_types[0], age: 15 },
-    { name: 'Gatuno', type: this.animal_types[1], age: 3 },
-    { name: 'Bob', type: this.animal_types[0], age: 5 },
-    { name: 'Fred', type: this.animal_types[2], age: 6 },
-  ];
-  new_animal: Animal = {
-    name: 'Felix',
-    type: this.animal_types[1],
-    age: 1,
-  };
+  animals: Array<Animal> = [];
   animal_details: string = '';
 
-  constructor(private listService: ListService) {}
+  new_animal: Animal = {
+    name: 'Felix',
+    type: 'Cat',
+    age: 1,
+  };
 
-  ngOnInit(): void {
-    this.animals.push(this.new_animal);
+  constructor(private listService: ListService) {
+    this.getAnimals();
   }
+
+  ngOnInit(): void {}
 
   showAge(animal: Animal) {
     this.animal_details = `Pet ${animal.name} is ${animal.age} years old.`;
   }
 
   removeAnimal(animal: Animal) {
-    this.animals = this.listService.remove(this.animals, animal);
+    if (typeof animal.id === 'number') {
+      const animal_name = animal.name;
+      this.listService
+        .remove(animal.id)
+        .subscribe(() => alert(`🔵 ${animal_name} removed!`));
+    }
+    this.getAnimals();
+  }
+
+  getAnimals(): void {
+    this.listService.getAll().subscribe((animals) => (this.animals = animals));
+  }
+
+  addAnimal(): void {
+    this.listService
+      .post(this.new_animal)
+      .subscribe((animal) => alert(`🟢 ${animal.name} added!`));
+    this.getAnimals();
   }
 }
